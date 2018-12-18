@@ -1,15 +1,13 @@
 package net.designanddata.etools.projecttracker.model
 
+import android.arch.lifecycle.LiveData
 import android.arch.persistence.room.*
 
 @Dao // data access object
 interface ProjectTrackerDao {
 	// Clients
 	@Query("SELECT * FROM client ORDER BY last_name, first_name")
-	fun getAllClients(): List<Client>
-
-	@Query("SELECT * FROM client WHERE `rowid` = :id")
-	fun getClientsById(id: Int): Client
+	fun getAllClients(): LiveData<List<Client>>
 
 	@Insert(onConflict = OnConflictStrategy.FAIL)
 	fun insert(client: Client): Client

@@ -1,10 +1,12 @@
 package net.designanddata.etools.projecttracker.model
 
 import android.app.Application
-import android.os.AsyncTask
+import android.arch.lifecycle.LiveData
+import org.jetbrains.anko.doAsync
 
-class ProjectDataRepsitory internal constructor(application: Application) {
+class ProjectDataRepository internal constructor(application: Application) {
 	private val mProjectTrackerDao: ProjectTrackerDao
+	private val allClients: LiveData<List<Client>>
 
 	// only client requires to be fully active, rest are dependant on current ViewModel
 	init {
@@ -13,19 +15,21 @@ class ProjectDataRepsitory internal constructor(application: Application) {
 		// effectively the same as:
 		// if (db == null) System.exit(1)
 		mProjectTrackerDao = db.projectTrackerDao()
+		allClients = mProjectTrackerDao.getAllClients()
 	}
 
 	fun insert(client:Client) {
-		InsertAsyncTask(mProjectTrackerDao).execute(client)
+		doAsync {
+			mProjectTrackerDao.insert(client)
+		}
 	}
 
-	private class InsertAsyncTask internal constructor (
-		private val mInsertAsyncTask: ProjectTrackerDao): AsyncTask<Client, Void, Void>() {
-			override fun doInBackground(vararg params: Client): Void? {
-				mInsertAsyncTask.insert(params[0])
-				return null
-			}
+	fun getAllClients():LiveData<List<Client>> { return allClients }
+	fun getClient(id:Int) {
+		// loop through clients and return matching ID
+
 	}
+
 }
 
 

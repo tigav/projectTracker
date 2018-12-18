@@ -41,4 +41,7 @@ dependencies {
     // Life cycles
     implementation              "android.arch.lifecycle:extensions:$rootProject.achLivecycleVersion"
     implementation              "android.arch.lifecycle:viewmodel:$rootProject.achLivecycleVersion"
+
+    // simplified Async Tasks
+    implementation              "org.jetbrains.anko:anko-commons:0.10.4"
 }
