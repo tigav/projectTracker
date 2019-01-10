@@ -1,18 +1,17 @@
 package net.designanddata.etools.projecttracker.model
 
 import android.arch.persistence.room.TypeConverter
+import java.util.Date
 
 class ProjectTrackerConverters {
+
 	@TypeConverter
-	fun stringToList(string: String?): List<Int>? {
-		if (string==null) return null
-		val strings: List<String> = string.split(',')
-		return strings.map { it.toInt() }
+	fun fromTimestamp(value: Long?): Date? {
+		return if (value == null) null else Date(value)
 	}
 
 	@TypeConverter
-	fun ListToString(list: List<Int>?): String? {
-		if (list==null) return null
-		return list.joinToString("," )
+	fun dateToTimestamp(date: Date?): Long? {
+		return date?.time
 	}
 }

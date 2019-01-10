@@ -16,6 +16,7 @@ class ProjectDataRepository internal constructor(application: Application) {
 		// if (db == null) System.exit(1)
 		mProjectTrackerDao = db.projectTrackerDao()
 		allClients = mProjectTrackerDao.getAllClients()
+
 	}
 
 	fun insert(client:Client) {
@@ -25,9 +26,12 @@ class ProjectDataRepository internal constructor(application: Application) {
 	}
 
 	fun getAllClients():LiveData<List<Client>> { return allClients }
-	fun getClient(id:Int) {
+	fun getAllBusinesses():LiveData<List<Business>> {
+		return mProjectTrackerDao.getAllBusinesses()
+	}
+	fun getClient(id:Int):Client {
 		// loop through clients and return matching ID
-
+		return mProjectTrackerDao.getClient(id)
 	}
 
 }

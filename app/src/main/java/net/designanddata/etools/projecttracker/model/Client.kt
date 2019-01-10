@@ -1,6 +1,7 @@
 package net.designanddata.etools.projecttracker.model
 
 import android.arch.persistence.room.*
+import android.content.Intent
 
 /*
 By default Room uses the class name as the database table name
@@ -26,9 +27,9 @@ These are simply containers for data used by other classes. These classes do not
  */
 @Entity
 data class Client(
-	@PrimaryKey(autoGenerate = true) @ColumnInfo(name="rowid") var id: Int,
-	@ColumnInfo(name = "first_name") var firstName: String?,
-	@ColumnInfo(name = "last_name") var lastName: String?,
+	@PrimaryKey(autoGenerate = true) @ColumnInfo(name="rowid") var id: Int?,
+	@ColumnInfo(name = "first_name") var firstName: String,
+	@ColumnInfo(name = "last_name") var lastName: String,
     // contacts reference?
 	@ColumnInfo(name = "email") var email: String?,
 	@ColumnInfo(name = "phone") var phone: String?,

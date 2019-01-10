@@ -8,4 +8,32 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="recyclerListItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="activityHeader">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">26dp</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginBottom">6dp</item>
+        <item name="android:textAlignment">viewStart</item>
+		<item name="android:layout_marginStart">16dp</item>
+		<item name="android:layout_marginTop">16dp</item>
+    </style>
+	<style name="form_subtitle">
+		<item name="android:layout_marginStart">16dp</item>
+		<item name="android:layout_marginEnd">16dp</item>
+		<item name="android:textAlignment">viewStart</item>
+		<item name="android:textSize">18sp</item>
+		<item name="android:layout_height">20dp</item>
+	</style>
+    <style name="errorText">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:color">@color/errorRed</item>
+    </style>
 </resources>

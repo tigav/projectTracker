@@ -1,14 +1,30 @@
 package net.designanddata.etools.projecttracker.model
 
+import android.app.Application
+import android.arch.lifecycle.AndroidViewModel
 import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.ViewModel
 
-class AllClientsViewModel: ViewModel() {
-	private lateinit var repository: ProjectDataRepository
-	private lateinit var mAllClients: LiveData<List<Client>>
+class AllClientsViewModel(application: Application): AndroidViewModel(application) {
+	private val repository: ProjectDataRepository = ProjectDataRepository(application)
+	private val mAllClients: LiveData<List<Client>>
 
-	@Inject fun init(repository: ProjectDataRepository) {
-		this.repository = repository
+	init {
 		mAllClients = repository.getAllClients()
+	}
+
+	fun getAllClients():LiveData<List<Client>> {
+		return mAllClients
+	}
+
+	fun insert(client:Client) {
+		repository.insert(client)
+	}
+	fun insert(firstName:String, lastName:String, email:String, phone:String, business: String?) {
+		insert(Client( null,
+			firstName,
+			lastName,
+			email,
+			phone,
+			business))
 	}
 }

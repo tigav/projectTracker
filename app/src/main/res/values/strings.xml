@@ -1,10 +1,22 @@
 <resources>
-    <string name="app_name">Project Tracker</string>
-    <string name="title_home">Home</string>
-    <string name="title_clients">Clients</string>
-    <string name="title_report">Report</string>
-    <string name="title_log">Log</string>
-    <string name="title_hours">Hours</string>
-    <string name="title_pay">Pay</string>
-    <string name="title_delivery">Delivery</string>
+	<string name="app_name">Project Tracker</string>
+	<string name="title_home">Home</string>
+	<string name="title_clients">Clients</string>
+	<string name="title_report">Report</string>
+	<string name="title_log">Log</string>
+	<string name="title_hours">Hours</string>
+	<string name="title_pay">Pay</string>
+	<string name="title_delivery">Delivery</string>
+	<string name="nameless_client">Nameless Client</string>
+	<string name="client_name">%s %s</string>
+	<string name="title_new_client">New Client</string>
+	<string name="subtitle_contactInfo">Contact Information</string>
+	<string name="name">Name</string><string name="hint_client_name">Your client\'s name</string>
+	<string name="name_validation">Name is required</string>
+	<string name="first_name">First Name</string><string name="hint_first_name">Your client\'s first name</string>
+	<string name="last_name">Last Name</string><string name="hint_last_name">Your client\'s last name</string>
+	<string name="email">Email</string><string name="hint_email">Your client\'s email</string>
+	<string name="phone_number">Phone number</string><string name="hint_phone">Your client\'s phone #</string>
+	<string name="client_business">Business</string><string name="hint_business">Your client\'s Business</string>
+	<string name="create">Create</string>
 </resources>

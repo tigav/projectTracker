@@ -1,9 +1,12 @@
 package net.designanddata.etools.projecttracker.model
 
 import android.arch.persistence.room.*
-import java.sql.Blob
+// import java.sql.Blob
+// https://stackoverflow.com/questions/46337519/how-insert-image-in-room-persistence-library/46356934
+// blob not recommended
 
-@Entity(foreignKeys = [
+@Entity(indices = [Index(value = ["project_id"])],
+	foreignKeys = [
 	ForeignKey(
 		entity = Project::class,
 		parentColumns = arrayOf("rowid"),
@@ -22,7 +25,7 @@ data class Invoice (
 	@ColumnInfo(name = "paid")
 	var paid: Boolean,
 
-	@ColumnInfo(name = "file")
-	var file: Blob
+	@ColumnInfo(name = "filepath")
+	var file: String
 )
 
