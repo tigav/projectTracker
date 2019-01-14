@@ -3,6 +3,8 @@
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
 	android:orientation="vertical">
-	<TextView android:id="@+id/recyclerItem" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+	<TextView android:id="@+id/recyclerItem" android:layout_width="match_parent" android:layout_height="48sp"
+			  android:textSize="14sp" android:paddingTop="13dp" android:paddingLeft="8dp"
+			  android:paddingRight="8dp" android:clickable="true" android:focusable="true"/>
 
 </android.support.constraint.ConstraintLayout>

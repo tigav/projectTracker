@@ -10,6 +10,7 @@
 	<string name="nameless_client">Nameless Client</string>
 	<string name="client_name">%s %s</string>
 	<string name="title_new_client">New Client</string>
+	<string name="cancel">Cancel</string>
 	<string name="subtitle_contactInfo">Contact Information</string>
 	<string name="name">Name</string><string name="hint_client_name">Your client\'s name</string>
 	<string name="name_validation">Name is required</string>

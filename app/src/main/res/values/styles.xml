@@ -31,6 +31,10 @@
 		<item name="android:textSize">18sp</item>
 		<item name="android:layout_height">20dp</item>
 	</style>
+	<style name="field_header">
+		<item name="android:color">@color/MutedBlack</item>
+		<item name="android:textSize">14sp</item>
+	</style>
     <style name="errorText">
         <item name="android:textSize">14sp</item>
         <item name="android:textStyle">normal</item>

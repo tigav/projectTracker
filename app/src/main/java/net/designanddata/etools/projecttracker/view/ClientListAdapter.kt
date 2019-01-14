@@ -9,6 +9,9 @@ import android.widget.TextView
 import net.designanddata.etools.projecttracker.R
 import net.designanddata.etools.projecttracker.model.Client
 
+/**
+ * Adapter for list of clients, a type of RecyclerView adapter
+ */
 class ClientListAdapter internal constructor(
 		private val context: Context
 	) : RecyclerView.Adapter<ClientListAdapter.ClientViewHolder>() {
@@ -16,8 +19,12 @@ class ClientListAdapter internal constructor(
 	private val inflater: LayoutInflater = LayoutInflater.from(context)
 	private var clients = emptyList<Client>() // Cached copy of words
 
+	/**
+	 * View holder - the individual items
+	 */
 	inner class ClientViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-		val clientItemView: TextView = itemView.findViewById(R.id.textView)
+		// Child id of Recyclerview_item.xml : ConstraintLayout = a recyclerItem - check ID in .xml file
+		val clientItemView: TextView = itemView.findViewById(R.id.recyclerItem)
 	}
 
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClientViewHolder {

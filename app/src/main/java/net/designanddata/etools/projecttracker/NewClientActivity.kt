@@ -1,28 +1,24 @@
 package net.designanddata.etools.projecttracker
 
-import android.app.Application
-import android.arch.lifecycle.LiveData
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.Window
 import android.widget.TextView
-import kotlinx.android.synthetic.main.activity_new_client.*
-import net.designanddata.etools.projecttracker.model.Business
-import net.designanddata.etools.projecttracker.model.ProjectDataRepository
 
 /**
  * TODO: Initial version - add raw unchecked data
  * TODO: version 0.1 - validate existent data, validate email & phone #
  * TODO: version 0.2? - bind to business
  */
-class NewClientActivity internal constructor(application: Application) : AppCompatActivity() {
-	private val allBusiness: LiveData<List<Business>>
-	private val mRepository: ProjectDataRepository = ProjectDataRepository(application)
+class NewClientActivity : AppCompatActivity() {
+//	private val allBusiness: LiveData<List<Business>>
+//	private val mRepository: ProjectDataRepository// = ProjectDataRepository(application)
 
 	init {
-		allBusiness = mRepository.getAllBusinesses()
+//		val allClients = ViewModelProviders.of(this).get(AllClientsViewModel::class.java)
+//		allBusiness = mRepository.getAllBusinesses()
 	}
 
 	override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,6 +37,13 @@ class NewClientActivity internal constructor(application: Application) : AppComp
 		return findViewById<TextView>(id).text.toString()
 	}
 
+	// Cancel and return, triggered via xml
+	fun cancel(view: View) {
+		setResult(RESULT_CANCELED)
+		finish()
+	}
+
+	// TODO : get list of existing clients
 	fun createClient(view : View) {
 		val firstName = getTextOfId(R.id.firstNameField)
 		val lastName = getTextOfId(R.id.lastNameField)
